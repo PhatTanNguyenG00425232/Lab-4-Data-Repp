@@ -8,12 +8,20 @@ function MovieItem(props) {
 
   return (
     <div>
-      <Card>
-        <Card.Header>{props.mymovie.Title}</Card.Header>
+      <Card style={{ width: '22rem' }}> 
+        {/* Header displaying the movie title*/}
+        <Card.Header>{props.mymovie?.Title || "Title Not Available"}</Card.Header>
         <Card.Body>
           <blockquote className="blockquote mb-0">
-            <img src={props.mymovie.Poster} alt={props.mymovie.Title} />
-            <footer>{props.mymovie.Year}</footer>
+            {/* Image displaying the movie poster*/}
+            <img 
+              variant="top" 
+              src={props.mymovie.Poster } 
+              alt={props.mymovie.Title} 
+              style={{ maxWidth: '100%', height: 'auto' }} // Ensures image fits well in the card
+            />
+            {/* Footer displaying the release year of the movie*/}
+            <footer>{props.mymovie?.Year || "Year Not Available"}</footer>
           </blockquote>
         </Card.Body>
       </Card>
@@ -21,4 +29,4 @@ function MovieItem(props) {
   );
 }
 
-export default MovieItem;
+export default MovieItem;  

@@ -1,5 +1,5 @@
 import React from 'react';
-
+//content function for content tab
 const Content = () => {
   return (
     <div>

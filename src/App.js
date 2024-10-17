@@ -6,16 +6,26 @@ import Content from './components/Content';
 import Read from './components/Read';
 import Create from './components/Create';
 import Movie from './components/Movie';
+
 function App() {
-  
   return (
     <Router>
+      {/* the navigation bar at the top of the app */}
       <NavigationBar />
+      
+      {/* routes for the application */}
       <Routes>
-        <Route path="/home" element={<Content></Content> } />
-        <Route path="/read" element={<Read></Read>} />
-        <Route path="/footer" element={<Footer></Footer>} />
-        <Route path="/movie" element={<Movie></Movie>}/>
+        {/* Route for the home page */}
+        <Route path="/home" element={<Content />} />
+        
+        {/* Route for the Read page/}
+        <Route path="/read" element={<Read />} />
+        
+        {/* Route for the Footer page,/}
+        <Route path="/footer" element={<Footer />} />
+        
+        {/* Route for the Movie page,*/}
+        <Route path="/movie" element={<Movie />} />
       </Routes>
     </Router>
   );
