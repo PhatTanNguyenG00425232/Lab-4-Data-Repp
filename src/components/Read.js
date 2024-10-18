@@ -1,6 +1,12 @@
 import Movie from "./Movie";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 const Read = () => {
+
+
+
+    const[movies,setMovies ]= useState([]);
     // Sample movie data as an array of objects
     const data = [
         {
@@ -26,11 +32,26 @@ const Read = () => {
         }
     ];
 
+    useEffect(
+        ()=>{
+            axios.get('https://jsonblob.com/api/jsonblob/1287718524221775872')
+            .then((response)=>{
+                console.log(response.data);
+                setMovies(response.data.movies)
+            })
+            .catch(
+                (error)=>{
+                    console.log(error);
+                }
+            )
+        },[]
+    );
+
     return (
         <div>
             <h3>Hello from the Read component</h3>
             {/* Render the Movie component and pass the movie data as props */}
-            <Movie myMovies={data} />
+            <Movie myMovies={movies} />
         </div>
     );
 };

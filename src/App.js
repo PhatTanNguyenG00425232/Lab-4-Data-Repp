@@ -18,13 +18,13 @@ function App() {
         {/* Route for the home page */}
         <Route path="/home" element={<Content />} />
         
-        {/* Route for the Read page/}
+        {/* Route for the Read page*/}
         <Route path="/read" element={<Read />} />
         
-        {/* Route for the Footer page,/}
+        {/* Route for the Footer page*/}
         <Route path="/footer" element={<Footer />} />
         
-        {/* Route for the Movie page,*/}
+        {/* Route for the Movie page*/}
         <Route path="/movie" element={<Movie />} />
       </Routes>
     </Router>
