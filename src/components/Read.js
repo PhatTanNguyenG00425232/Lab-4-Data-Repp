@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 const Read = () => {
 
 
-
+    //useState to add state variables to component
     const[movies,setMovies ]= useState([]);
     // Sample movie data as an array of objects
     const data = [
@@ -34,8 +34,9 @@ const Read = () => {
 
     useEffect(
         ()=>{
+            {/*make an HTTP Get call to return the JSON form */}
             axios.get('https://jsonblob.com/api/jsonblob/1287718524221775872')
-            .then((response)=>{
+            .then((response)=>{//set the movie from the JSON
                 console.log(response.data);
                 setMovies(response.data.movies)
             })
@@ -50,7 +51,7 @@ const Read = () => {
     return (
         <div>
             <h3>Hello from the Read component</h3>
-            {/* Render the Movie component and pass the movie data as props */}
+            {/* Render the Movie component and pass the movie data*/}
             <Movie myMovies={movies} />
         </div>
     );

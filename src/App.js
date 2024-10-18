@@ -26,6 +26,9 @@ function App() {
         
         {/* Route for the Movie page*/}
         <Route path="/movie" element={<Movie />} />
+
+        {/* Route for the Create page*/}
+        <Route path="/create" element={<Create />} />
       </Routes>
     </Router>
   );
